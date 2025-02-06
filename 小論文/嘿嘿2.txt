@@ -1,0 +1,65 @@
+機器視覺（Machine Vision）用於辨識物件時，通常會利用影像處理與機器學習的技術，結合閥值處理（Thresholding）、**邊緣檢測（Edge Detection）和深度學習（Deep Learning）**來做特徵提取與分類。以下是這些技術的核心原理：
+
+1. 閥值處理（Thresholding）
+🔹 主要原理：區分前景與背景
+閥值處理是最簡單的影像分割方法，透過設定像素亮度的「門檻值（Threshold）」，將影像中的像素分類為前景（Foreground）或背景（Background）。
+
+📌 常見方法
+全域閥值（Global Thresholding）
+
+使用單一閥值 
+𝑇
+T（例如 127），讓所有亮度高於 
+𝑇
+T 的像素變為白色（255），低於 
+𝑇
+T 的變為黑色（0）。​
+ 
+常見演算法：Otsu’s method（自動選擇最佳閥值）
+自適應閥值（Adaptive Thresholding）
+
+針對不同區域使用不同的閥值，適用於光照不均的影像。
+例如：OpenCV 的 cv2.adaptiveThreshold()
+雙峰閥值（Double Thresholding）
+
+例如 Canny 邊緣檢測中，設定兩個閥值（高閥值與低閥值）來提取重要邊緣。
+✅ 應用： 物件偵測（車牌辨識、醫學影像、二值化處理）
+
+2. 邊緣檢測（Edge Detection）
+🔹 主要原理：找出圖像中像素強度變化最大的區域
+邊緣是物件與背景的交界處，通常是亮度變化劇烈的地方。梯度（Gradient）運算是邊緣檢測的核心，透過微分計算圖像的變化率來找出邊界。
+
+Canny 邊緣檢測（Canny Edge Detection）
+
+Canny 方法的步驟：
+高斯模糊（Gaussian Blur） 降低噪聲
+Sobel 運算 計算梯度
+非極大值抑制（Non-Maximum Suppression） 找到最強邊緣
+雙閥值（Double Thresholding） 消除雜訊
+✅ 應用： 物件輪廓偵測（車輛識別、人臉辨識、條碼掃描）
+
+3. 機器學習與深度學習（Machine Learning & Deep Learning）
+🔹 主要原理：訓練模型來學習特徵
+當傳統影像處理方法（如閥值處理或邊緣檢測）無法準確辨識物件時，可以使用**機器學習（ML）或深度學習（DL）**來學習影像的特徵，並進行分類或偵測。
+
+📌 常見方法
+特徵工程（Feature Engineering）+ 傳統機器學習
+
+方法：SVM（支持向量機）、KNN（最近鄰居演算法）、隨機森林
+特徵提取：Histogram of Oriented Gradients (HOG)、SIFT、ORB
+深度學習（Deep Learning）
+
+使用**卷積神經網絡（CNN）**來自動學習影像特徵
+典型架構：
+YOLO（You Only Look Once）：物件偵測
+Mask R-CNN：影像分割
+U-Net：醫學影像分割
+需要大量的訓練數據與 GPU 計算能力
+✅ 應用： 人臉識別（Face Recognition）、自駕車、醫學影像分析（MRI 腫瘤檢測）
+
+🔎 總結
+方法	主要概念	適用情境
+閥值處理	透過亮度區分前景與背景	簡單二值化，如手寫字辨識、車牌偵測
+邊緣檢測	利用梯度找到物件輪廓	物件輪廓偵測，如人臉、車輛邊緣
+機器學習	透過手工設計特徵進行分類	小型數據集，如數字辨識（SVM, KNN）
+深度學習	CNN 透過大數據學習影像特徵	大規模影像分析，如自駕車、醫學影像
