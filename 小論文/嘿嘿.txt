@@ -1,0 +1,28 @@
+你可以在Google Scholar（scholar.google.com）、IEEE Xplore（ieeexplore.ieee.org）或Springer Link（link.springer.com）等學術資源網站，搜尋以下關鍵字：
+
+Thresholding in Image Processing（圖像處理中的閥值處理）
+Otsu's Method for Image Thresholding（大津法閥值處理）
+Adaptive Thresholding Techniques（自適應閥值技術）
+Image Segmentation Methods（圖像分割方法）
+Edge Detection and Segmentation（邊緣檢測與圖像分割）
+Watershed Algorithm for Image Segmentation（分水嶺演算法）
+Region-based and Contour-based Segmentation（基於區域與輪廓的分割技術）
+2. 相關經典文獻
+這些是一些與閥值處理與圖像分割相關的經典論文與書籍：
+
+Otsu, N. (1979). "A Threshold Selection Method from Gray-Level Histograms." IEEE Transactions on Systems, Man, and Cybernetics. (介紹了 Otsu’s method)
+Gonzalez, R. C., & Woods, R. E. (2018). "Digital Image Processing" (4th Edition). Pearson.（一本經典的數字圖像處理教科書）
+Jain, A. K. (1989). "Fundamentals of Digital Image Processing." Prentice Hall.（包含大量圖像分割技術）
+Canny, J. (1986). "A Computational Approach to Edge Detection." IEEE Transactions on Pattern Analysis and Machine Intelligence. (Canny 邊緣檢測的原始論文)
+3. 線上課程與教學
+如果你想要更實作導向的學習，也可以參考：
+
+Coursera: Digital Image Processing by Northwestern University（數字圖像處理）
+YouTube: 搜尋 "Image Segmentation OpenCV" 或 "Thresholding Techniques OpenCV"
+4. OpenCV 官方文件
+如果你在用 Python + OpenCV，可以參考 OpenCV 官方文件：
+
+Thresholding Documentation
+Image Segmentation Using Contours
+Canny Edge Detection
+如果你有特定的應用場景，例如醫學影像、衛星影像、工業檢測等，也可以針對這些領域的圖像處理應用搜尋文獻！
