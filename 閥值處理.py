@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 def main():
     cap = cv2.VideoCapture(0)  # 開啟鏡頭
@@ -15,6 +16,11 @@ def main():
         
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # 轉為灰階
         _, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)  # 閥值處理
+        
+        white_pixels = np.sum(thresh == 255)
+        black_pixels = np.sum(thresh == 0)
+        
+        print(f'White pixels: {white_pixels}, Black pixels: {black_pixels}')
         
         cv2.imshow('Original', frame)  # 顯示原始影像
         cv2.imshow('Threshold', thresh)  # 顯示閥值處理後影像
